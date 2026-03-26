@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 40" width="280" height="40">
+    <path d="M5,25 L15,25 M2,18 L10,18" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+    
+    <path d="M 15 28 L 22 16 C 25 10 32 10 38 12 L 52 18 L 62 18 C 65 18 68 21 68 25 L 68 28 Z" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linejoin="round"/>
+    
+    <circle cx="26" cy="28" r="4.5" fill="#0f172a" stroke="#f8fafc" stroke-width="2"/>
+    <circle cx="54" cy="28" r="4.5" fill="#0f172a" stroke="#f8fafc" stroke-width="2"/>
+    
+    <text x="78" y="27" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="900" font-style="italic" fill="#f8fafc" letter-spacing="-0.5">FAST</text>
+    <text x="136" y="27" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="400" fill="#94a3b8" letter-spacing="2">DEALERSHIP</text>
+</svg>

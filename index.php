@@ -1,14 +1,11 @@
 <?php
-// 1. Load the database connection
 require 'db.php';
 
-// 2. Check if a category was clicked in the navigation
 $category_filter = null;
 if (isset($_GET['category']) && is_numeric($_GET['category'])) {
     $category_filter = $_GET['category'];
 }
 
-// 3. Build the Base SQL Query
 $sql = "SELECT a.id, a.title, a.summary, a.created, 
                c.name AS category_name, 
                i.file AS image_file, i.alt AS image_alt,
@@ -18,28 +15,20 @@ $sql = "SELECT a.id, a.title, a.summary, a.created,
         LEFT JOIN image i ON a.image_id = i.id
         LEFT JOIN member m ON a.member_id = m.id
         WHERE a.published = 1";
-
-// 4. Add the Category Filter (if one was clicked)
 if ($category_filter) {
     $sql .= " AND a.category_id = :cat_id";
 }
-
 $sql .= " ORDER BY a.created DESC";
-
-// 5. Execute the Query Securely
 $art_stmt = $pdo->prepare($sql);
 
 if ($category_filter) {
-    // Bind the ID from the URL to the query safely
     $art_stmt->execute(['cat_id' => $category_filter]);
 } else {
-    // No filter, just run the normal query
+    
     $art_stmt->execute();
 }
-
 $cars = $art_stmt->fetchAll();
 
-// 6. Optional Detail: Change the page heading dynamically
 $page_heading = "Available Vehicles";
 if ($category_filter) {
     $heading_stmt = $pdo->prepare("SELECT name FROM category WHERE id = :id");
@@ -50,7 +39,6 @@ if ($category_filter) {
     }
 }
 
-// 7. Load the Header
 include 'header.php';
 ?>
 
@@ -94,6 +82,5 @@ include 'header.php';
 </div>
 
 <?php 
-// 4. Load the Footer
 include 'footer.php'; 
 ?>

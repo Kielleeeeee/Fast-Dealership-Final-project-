@@ -1,12 +1,10 @@
 <?php
-// 1. Check if an ID was passed in the URL
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     die("Invalid vehicle ID.");
 }
 
 $car_id = $_GET['id'];
 
-// 2. Database Connection (Using your MAMP credentials)
 $host     = 'localhost'; 
 $db       = 'phpbook-1'; 
 $user     = 'root';      
@@ -25,8 +23,6 @@ try {
 } catch (\PDOException $e) {
     die("Database connection failed.");
 }
-
-// 3. Fetch the Specific Car using a PREPARED STATEMENT (Security best practice!)
 $sql = "SELECT a.*, 
                c.name AS category_name, 
                i.file AS image_file, i.alt AS image_alt,
@@ -41,7 +37,6 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute(['id' => $car_id]);
 $car = $stmt->fetch();
 
-// If no car is found with that ID, stop the script
 if (!$car) {
     die("Vehicle not found or is no longer available.");
 }

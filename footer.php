@@ -1,5 +1,4 @@
 <?php
-// footer.php
 ?>
     <footer class="site-footer mt-auto">
         <div class="container">

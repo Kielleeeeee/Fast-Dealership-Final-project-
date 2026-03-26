@@ -1,7 +1,5 @@
 <?php
-// header.php
 
-// Fetch Categories for Navigation (Requires $pdo from db.php to be loaded first)
 $cat_stmt = $pdo->query("SELECT * FROM category WHERE navigation = 1 ORDER BY name ASC");
 $categories = $cat_stmt->fetchAll();
 ?>
