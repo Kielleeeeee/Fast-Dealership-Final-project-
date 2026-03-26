@@ -1,0 +1,102 @@
+/* style.css - Dark & Clean Theme */
+
+/* Core Background & Text */
+body {
+    background-color: #0f172a; /* Deep Slate */
+    color: #f8fafc; /* Off-white for readability */
+}
+
+/* Customizing the Navbar */
+.navbar {
+    background: linear-gradient(90deg, #1e293b 0%, #0f172a 100%) !important;
+    border-bottom: 2px solid #3b82f6; /* Electric Blue Accent Line */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Make images uniform and clean */
+.card-img-top, .img-fluid { 
+    height: 220px; 
+    object-fit: cover; 
+    background-color: #1e293b; 
+    border-bottom: 1px solid #334155;
+}
+
+.img-fluid {
+    height: auto; /* Lets the detail page image scale naturally */
+    max-height: 400px;
+}
+
+/* Base Card Styling */
+.card {
+    background-color: #1e293b; 
+    color: #f8fafc; /* <-- Add this line to make the text light */
+    border: 1px solid #334155;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-footer {
+    background-color: rgba(15, 23, 42, 0.5); /* Semi-transparent footer */
+    border-top: 1px solid #334155;
+    color: #94a3b8 !important;
+}
+
+/* Card hover animation and clickability */
+.car-card-link {
+    text-decoration: none; 
+    color: inherit;        
+    display: block;
+}
+
+.car-card-link:hover .card { 
+    transform: translateY(-6px); 
+    border-color: #3b82f6; /* Accent color outline on hover */
+    box-shadow: 0 12px 24px rgba(59, 130, 246, 0.15); /* Soft blue glow */
+}
+
+/* Typography Enhancements */
+.car-card-link:hover .card-title {
+    color: #60a5fa; /* Text lights up slightly on hover */
+}
+
+.text-muted {
+    color: #94a3b8 !important; /* Adjusted muted text for dark backgrounds */
+}
+
+/* Colorful Accents */
+.badge.bg-primary {
+    background-color: #3b82f6 !important;
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+/* Footer Layout & Styling */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Forces the body to be at least the height of the screen */
+}
+
+/* This pushes the footer to the bottom */
+main, .container {
+    flex: 1; 
+}
+
+.site-footer {
+    background-color: #0f172a; /* Matches your dark slate body background */
+    border-top: 1px solid #334155; /* Subtle separation line */
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    margin-top: auto; /* Works with flexbox to push to bottom */
+}
+
+.footer-link {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    color: #3b82f6; /* Electric blue hover effect */
+}
